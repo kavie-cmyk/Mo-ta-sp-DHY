@@ -1,0 +1,119 @@
+.comparison__body {
+  max-width: var(--max-w-narrative);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.comparison__table-wrap {
+  margin-top: var(--space-6);
+  background: var(--surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow-x: auto;
+}
+
+.comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+
+.comparison__table th,
+.comparison__table td {
+  text-align: left;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.comparison__table thead th {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  background: var(--surface-muted);
+}
+
+.comparison__table tbody tr:last-child th,
+.comparison__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison__tool {
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  width: 16%;
+}
+
+.comparison__focus {
+  color: var(--text-secondary);
+  width: 30%;
+}
+
+.comparison__add {
+  color: var(--text-primary);
+}
+
+.comparison__cards {
+  display: none;
+}
+
+.comparison__caption {
+  margin-top: var(--space-4);
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  max-width: var(--max-w-narrative);
+}
+
+@media (max-width: 767px) {
+  .comparison__table-wrap {
+    display: none;
+  }
+
+  .comparison__cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+  }
+
+  .comparison__card {
+    background: var(--surface);
+    border: var(--border-default);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: var(--space-4) var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .comparison__card-tool {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .comparison__card-block {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .comparison__card-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+  }
+
+  .comparison__card-label--add {
+    color: var(--accent);
+  }
+}

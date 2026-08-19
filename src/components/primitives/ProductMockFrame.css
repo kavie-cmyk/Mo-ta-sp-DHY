@@ -1,0 +1,81 @@
+.mock-frame {
+  background: var(--surface);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: opacity var(--step-duration) ease, transform var(--step-duration) ease;
+}
+
+.mock-frame--dark {
+  background: var(--dark-2);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-canvas);
+}
+
+.mock-frame--muted {
+  opacity: 0.55;
+  filter: saturate(0.7);
+}
+
+.mock-frame__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px var(--space-4);
+  border-bottom: var(--border-default);
+  background: var(--surface-muted);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.mock-frame--dark .mock-frame__bar {
+  background: rgba(255, 255, 255, 0.06);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  color: rgba(247, 248, 248, 0.7);
+}
+
+.mock-frame__dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.mock-frame__dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.mock-frame--dark .mock-frame__dots i {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.mock-frame__label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mock-frame__badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.mock-frame--dark .mock-frame__badge {
+  color: #7fc9c7;
+  background: rgba(127, 201, 199, 0.12);
+}
+
+.mock-frame__content {
+  flex: 1;
+  min-height: 0;
+}

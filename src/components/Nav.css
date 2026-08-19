@@ -1,0 +1,140 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(16, 24, 32, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 0 var(--gutter);
+  height: 64px;
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-inverse);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.nav__brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.nav__desktop {
+  display: block;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.nav__link {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: rgba(247, 248, 248, 0.78);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color var(--hover-duration) ease, background var(--hover-duration) ease;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav__link--active {
+  color: #fff;
+  background: rgba(29, 122, 120, 0.35);
+}
+
+.nav__toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--text-inverse);
+  padding: 8px;
+  cursor: pointer;
+  min-width: 40px;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__mobile {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--dark);
+}
+
+.nav__mobile-list {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-2) var(--gutter) var(--space-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__mobile-list a {
+  display: block;
+  padding: 12px var(--space-2);
+  color: var(--text-inverse);
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: var(--radius-sm);
+}
+
+.nav__mobile-list a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 920px) {
+  .nav__desktop {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav__inner {
+    padding: 0 var(--space-4);
+  }
+
+  .nav__brand-text {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

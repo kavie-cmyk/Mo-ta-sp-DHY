@@ -1,0 +1,61 @@
+/* ============================================================
+   SAVA Clinical Reasoning Studio — Design tokens (P2B §6)
+   ============================================================ */
+
+:root {
+  /* Color system */
+  --bg-warm: #f6f5f1;
+  --surface: #ffffff;
+  --surface-muted: #efefeb;
+  --dark: #101820;
+  --dark-2: #17232d;
+  --text-primary: #14212b;
+  --text-secondary: #5c6872;
+  --text-inverse: #f7f8f8;
+  --border: #d9dede;
+  --accent: #1d7a78;
+  --accent-soft: #e4f2f1;
+  --evidence: #2f6b4f;
+  --evidence-soft: #e7f1eb;
+  --validation: #9a6a18;
+  --validation-soft: #f7eedc;
+
+  /* Typography */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  /* Borders & shadow */
+  --border-default: 1px solid var(--border);
+  --shadow-card: 0 8px 30px rgba(16, 24, 32, 0.06);
+  --shadow-canvas: 0 24px 60px rgba(16, 24, 32, 0.14);
+
+  /* Spacing rhythm (base 4) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* Layout */
+  --max-w: 1240px;
+  --max-w-narrative: 720px;
+  --gutter: 24px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --reveal-duration: 260ms;
+    --step-duration: 320ms;
+    --hover-duration: 150ms;
+  }
+}

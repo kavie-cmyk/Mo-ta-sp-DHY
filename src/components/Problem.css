@@ -1,0 +1,133 @@
+.problem__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  max-width: var(--max-w-narrative);
+}
+
+.problem__contrast {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.problem__panel {
+  background: var(--surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+}
+
+.problem__panel--accent {
+  border-color: rgba(29, 122, 120, 0.4);
+  background: linear-gradient(180deg, #ffffff 0%, var(--accent-soft) 100%);
+}
+
+.problem__panel-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.problem__panel--accent .problem__panel-label {
+  color: var(--accent);
+}
+
+.problem__panel-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-5);
+}
+
+.mini-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mini-flow__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.mini-flow__node {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-height: 40px;
+}
+
+.mini-flow--muted .mini-flow__node {
+  background: var(--surface-muted);
+  color: var(--text-secondary);
+}
+
+.problem__panel--accent .mini-flow__node {
+  background: var(--accent-soft);
+  border-color: rgba(29, 122, 120, 0.3);
+}
+
+.mini-flow__arrow-h {
+  color: var(--text-secondary);
+}
+
+.mini-flow__arrow-v {
+  display: none;
+  color: var(--text-secondary);
+}
+
+.problem__caption {
+  margin-top: var(--space-5);
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  max-width: var(--max-w-narrative);
+}
+
+/* Desktop horizontal flow */
+@media (min-width: 900px) {
+  .mini-flow {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .mini-flow__arrow-v {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .mini-flow__arrow-h {
+    display: none;
+  }
+
+  .mini-flow__arrow-v {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 767px) {
+  .problem__contrast {
+    grid-template-columns: 1fr;
+  }
+}

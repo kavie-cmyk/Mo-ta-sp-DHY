@@ -1,0 +1,129 @@
+.story__intro {
+  max-width: var(--max-w-narrative);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.story__note {
+  margin-top: var(--space-4);
+}
+
+.story {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-8);
+  margin-top: var(--space-6);
+  align-items: start;
+}
+
+.story__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.story__step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.story__step:last-child {
+  border-bottom: none;
+}
+
+.story__step:not(.story__step--active) {
+  opacity: 0.55;
+}
+
+.story__step-marker {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: var(--surface);
+  margin-top: 2px;
+}
+
+.story__step--active .story__step-marker {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.story__step-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.story__step-text {
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.story__step-mocklabel {
+  margin-top: var(--space-2);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Mobile mock hidden on desktop */
+.story__mobile-mock {
+  display: none;
+}
+
+/* Sticky panel (desktop) */
+.story__panel {
+  position: sticky;
+  top: 88px;
+}
+
+.story__panel-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.story__mock-body {
+  padding: var(--space-4);
+}
+
+.story__panel-caption {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ---- Mobile: sticky OFF, stacked cards with inline mocks ---- */
+@media (max-width: 1023px) {
+  .story {
+    grid-template-columns: 1fr;
+  }
+
+  .story__panel {
+    display: none;
+  }
+
+  .story__mobile-mock {
+    display: block;
+    grid-column: 1 / -1;
+    margin-top: var(--space-3);
+  }
+}

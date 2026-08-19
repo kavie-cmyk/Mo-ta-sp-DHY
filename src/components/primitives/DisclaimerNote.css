@@ -1,0 +1,14 @@
+.disclaimer-note {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-top: var(--space-4);
+}
+
+.disclaimer-note__mark {
+  color: var(--validation);
+  font-size: 14px;
+}

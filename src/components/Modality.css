@@ -1,0 +1,104 @@
+.modality__body {
+  max-width: var(--max-w-narrative);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.modality__panel {
+  margin-top: var(--space-6);
+  background: var(--surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+}
+
+.modality__question {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-5);
+}
+
+.modality__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.modality__card {
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--surface);
+  transition: border-color var(--hover-duration) ease,
+    box-shadow var(--hover-duration) ease;
+}
+
+.modality__card:hover {
+  border-color: rgba(29, 122, 120, 0.4);
+  box-shadow: var(--shadow-card);
+}
+
+.modality__card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modality__card-if {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+.modality__card-tag {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.modality__arrow {
+  color: var(--accent);
+}
+
+.modality__card-then {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.modality__guardrail {
+  margin-top: var(--space-5);
+}
+
+.modality__caption {
+  margin-top: var(--space-4);
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  max-width: var(--max-w-narrative);
+}
+
+@media (max-width: 899px) {
+  .modality__cards {
+    grid-template-columns: 1fr;
+  }
+}
