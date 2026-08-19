@@ -9,7 +9,7 @@ const modalityIcons = [Box, ScanLine, Glasses]
 
 export function Modality() {
   return (
-    <SectionShell id="s07" labelledBy="s07-title">
+    <SectionShell id="s07" tone="dark" labelledBy="s07-title">
       <SectionHeading
         headingId="s07-title"
         eyebrow="Trực quan hóa đúng lúc, đúng mục tiêu"

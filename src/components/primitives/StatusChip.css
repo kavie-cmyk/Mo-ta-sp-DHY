@@ -22,7 +22,7 @@
 
 .status-chip--accent {
   background: var(--accent-soft);
-  border-color: rgba(29, 122, 120, 0.3);
+  border-color: rgba(0, 112, 208, 0.3);
   color: var(--text-primary);
 }
 
@@ -57,5 +57,5 @@
 }
 
 .status-chip--dark .status-chip__dot {
-  background: #7fc9c7;
+  background: #6fc0ef;
 }

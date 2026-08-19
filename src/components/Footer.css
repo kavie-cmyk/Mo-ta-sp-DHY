@@ -18,17 +18,10 @@
   align-items: flex-start;
 }
 
-.footer__mark {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm);
-  background: var(--accent);
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 17px;
+.footer__logo {
+  width: 130px;
+  height: auto;
+  margin-top: 4px;
   flex-shrink: 0;
 }
 
@@ -40,7 +33,7 @@
 
 .footer__tagline {
   font-size: 13.5px;
-  color: rgba(247, 248, 248, 0.7);
+  color: rgba(247, 248, 255, 0.72);
   margin: 2px 0 0;
 }
 

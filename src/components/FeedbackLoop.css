@@ -37,8 +37,8 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(29, 122, 120, 0.3);
-  color: #7fc9c7;
+  background: rgba(0, 112, 208, 0.3);
+  color: #6fc0ef;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -53,12 +53,12 @@
 }
 
 .loop__arrow-h {
-  color: #7fc9c7;
+  color: #6fc0ef;
 }
 
 .loop__arrow-v {
   display: none;
-  color: #7fc9c7;
+  color: #6fc0ef;
 }
 
 .loop__core {
@@ -69,7 +69,7 @@
   gap: var(--space-2);
   font-size: 14px;
   font-weight: 600;
-  color: #7fc9c7;
+  color: #6fc0ef;
   text-align: center;
 }
 

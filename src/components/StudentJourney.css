@@ -59,7 +59,7 @@
   }
 
   .journey__stepper .stepper__item--emph {
-    border-color: rgba(29, 122, 120, 0.45);
+    border-color: rgba(0, 112, 208, 0.45);
     background: var(--accent-soft);
   }
 }
@@ -83,7 +83,7 @@
   }
 
   .journey__stepper .stepper__item--emph {
-    border-color: rgba(29, 122, 120, 0.45);
+    border-color: rgba(0, 112, 208, 0.45);
     background: var(--accent-soft);
   }
 }

@@ -5,12 +5,18 @@
   align-items: start;
 }
 
+.hero__logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: var(--space-5);
+}
+
 .hero__eyebrow {
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #7fc9c7;
+  color: #6fc0ef;
   margin-bottom: var(--space-4);
 }
 
@@ -19,14 +25,14 @@
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--text-inverse);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .hero__sub {
   margin-top: var(--space-5);
   font-size: clamp(17px, 1.6vw, 20px);
   line-height: 1.55;
-  color: rgba(247, 248, 248, 0.85);
+  color: rgba(247, 248, 255, 0.9);
   max-width: 56ch;
 }
 
@@ -37,7 +43,7 @@
   gap: var(--space-4);
   font-size: 15.5px;
   line-height: 1.65;
-  color: rgba(247, 248, 248, 0.72);
+  color: rgba(247, 248, 255, 0.75);
   max-width: 62ch;
 }
 
@@ -58,11 +64,11 @@
   justify-content: space-between;
   gap: var(--space-3);
   padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-sm);
   font-size: 13px;
-  color: rgba(247, 248, 248, 0.9);
+  color: rgba(247, 248, 255, 0.92);
 }
 
 .hero-canvas__case-title {
@@ -71,7 +77,7 @@
 
 .hero-canvas__case-state {
   font-size: 12px;
-  color: #7fc9c7;
+  color: #6fc0ef;
   font-weight: 600;
 }
 
@@ -92,7 +98,7 @@
   margin-top: var(--space-4);
   font-size: 13.5px;
   line-height: 1.6;
-  color: rgba(247, 248, 248, 0.6);
+  color: rgba(247, 248, 255, 0.6);
 }
 
 /* Tablet */

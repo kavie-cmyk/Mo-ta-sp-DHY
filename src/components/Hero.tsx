@@ -14,6 +14,13 @@ export function Hero() {
     <SectionShell id="s01" tone="dark" labelledBy="hero-title">
       <div className="hero">
         <div className="hero__text">
+          <img
+            className="hero__logo"
+            src="/Mo-ta-sp-DHY/sava-logo-white.png"
+            alt="SAVA"
+            width={150}
+            height={38}
+          />
           <p className="hero__eyebrow">SAVA Clinical Reasoning Studio</p>
           <h1 id="hero-title" className="hero__headline">
             Luyện tư duy lâm sàng qua ca bệnh tương tác

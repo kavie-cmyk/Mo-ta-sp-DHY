@@ -16,7 +16,7 @@
 
 .callout--info {
   background: var(--accent-soft);
-  border-color: rgba(29, 122, 120, 0.2);
+  border-color: rgba(0, 112, 208, 0.2);
   color: var(--text-primary);
 }
 

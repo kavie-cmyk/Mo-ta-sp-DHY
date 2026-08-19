@@ -6,9 +6,13 @@ export function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__brand">
-          <span className="footer__mark" aria-hidden="true">
-            S
-          </span>
+          <img
+            className="footer__logo"
+            src="/Mo-ta-sp-DHY/sava-logo-white.png"
+            alt="SAVA"
+            width={132}
+            height={33}
+          />
           <div>
             <p className="footer__name">{site.productName}</p>
             <p className="footer__tagline">{site.tagline}</p>

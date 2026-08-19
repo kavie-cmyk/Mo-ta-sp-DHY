@@ -1,24 +1,29 @@
 /* ============================================================
-   SAVA Clinical Reasoning Studio — Design tokens (P2B §6)
+   SAVA Clinical Reasoning Studio — Design tokens
+   Redesigned to match SAVA Profile Deck (Hồ sơ năng lực SAVA)
+   Palette: navy #000050–#0020B0, blue accent #0070D0/#20A0E0,
+   clean white content surfaces, indigo text accents.
    ============================================================ */
 
 :root {
-  /* Color system */
-  --bg-warm: #f6f5f1;
+  /* Color system — SAVA brand */
+  --bg-warm: #f4f6fb;            /* light blue-grey content canvas */
   --surface: #ffffff;
-  --surface-muted: #efefeb;
-  --dark: #101820;
-  --dark-2: #17232d;
-  --text-primary: #14212b;
-  --text-secondary: #5c6872;
-  --text-inverse: #f7f8f8;
-  --border: #d9dede;
-  --accent: #1d7a78;
-  --accent-soft: #e4f2f1;
-  --evidence: #2f6b4f;
-  --evidence-soft: #e7f1eb;
-  --validation: #9a6a18;
-  --validation-soft: #f7eedc;
+  --surface-muted: #eef1f8;      /* soft blue-grey card surface */
+  --dark: #000050;               /* SAVA deep navy (cover/section break) */
+  --dark-2: #001070;             /* navy secondary */
+  --text-primary: #0a1440;       /* deep navy text */
+  --text-secondary: #5b6b8c;     /* muted blue-grey text */
+  --text-inverse: #f7f8ff;
+  --border: #d5dcef;             /* soft blue border */
+  --accent: #0070d0;             /* SAVA blue accent */
+  --accent-2: #20a0e0;           /* light blue accent */
+  --accent-soft: #e3f0fb;        /* soft blue surface */
+  --evidence: #0e8a6d;           /* evidence/ok */
+  --evidence-soft: #e4f4ee;
+  --validation: #b4770a;         /* validation/warning */
+  --validation-soft: #fdf3e0;
+  --indigo: #3b3fa0;             /* indigo accent seen in deck */
 
   /* Typography */
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
@@ -31,8 +36,8 @@
 
   /* Borders & shadow */
   --border-default: 1px solid var(--border);
-  --shadow-card: 0 8px 30px rgba(16, 24, 32, 0.06);
-  --shadow-canvas: 0 24px 60px rgba(16, 24, 32, 0.14);
+  --shadow-card: 0 8px 30px rgba(16, 24, 64, 0.08);
+  --shadow-canvas: 0 24px 60px rgba(0, 0, 40, 0.18);
 
   /* Spacing rhythm (base 4) */
   --space-1: 4px;

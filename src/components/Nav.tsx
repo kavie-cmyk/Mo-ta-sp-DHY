@@ -50,10 +50,14 @@ export function Nav() {
       </a>
       <div className="nav__inner">
         <a href="#s01" className="nav__brand" aria-label="SAVA Clinical Reasoning Studio — về đầu trang">
-          <span className="nav__brand-mark" aria-hidden="true">
-            S
-          </span>
-          <span className="nav__brand-text">SAVA Clinical Reasoning Studio</span>
+          <img
+            className="nav__brand-logo"
+            src="/Mo-ta-sp-DHY/sava-logo-white.png"
+            alt="SAVA"
+            width={118}
+            height={30}
+          />
+          <span className="nav__brand-text">Clinical Reasoning Studio</span>
         </a>
 
         <nav className="nav__desktop" aria-label="Điều hướng chính">

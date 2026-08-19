@@ -24,7 +24,7 @@
 }
 
 .problem__panel--accent {
-  border-color: rgba(29, 122, 120, 0.4);
+  border-color: rgba(0, 112, 208, 0.4);
   background: linear-gradient(180deg, #ffffff 0%, var(--accent-soft) 100%);
 }
 
@@ -84,7 +84,7 @@
 
 .problem__panel--accent .mini-flow__node {
   background: var(--accent-soft);
-  border-color: rgba(29, 122, 120, 0.3);
+  border-color: rgba(0, 112, 208, 0.3);
 }
 
 .mini-flow__arrow-h {

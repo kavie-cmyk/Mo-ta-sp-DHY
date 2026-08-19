@@ -8,3 +8,15 @@ npm-debug.log*
 docs_src/
 
 *.tsbuildinfo
+
+# Design reference / extraction tooling (not part of the site)
+design_ref/
+scripts/analyze_pdf.py
+scripts/build_logo_assets.py
+scripts/clean_logo.py
+scripts/crop_logo.py
+scripts/crop_logo2.py
+scripts/extract_pdf.py
+scripts/find_logo_region.py
+scripts/find_wordmark.py
+scripts/locate_logo.py

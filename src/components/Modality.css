@@ -5,14 +5,18 @@
   gap: var(--space-4);
   font-size: 16px;
   line-height: 1.65;
+  color: var(--text-inverse);
+}
+
+.modality__body p {
+  color: rgba(247, 248, 255, 0.85);
 }
 
 .modality__panel {
   margin-top: var(--space-6);
-  background: var(--surface);
-  border: var(--border-default);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
   padding: var(--space-6);
 }
 
@@ -20,7 +24,7 @@
   text-align: center;
   font-size: 17px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-inverse);
   margin: 0 0 var(--space-5);
 }
 
@@ -31,7 +35,7 @@
 }
 
 .modality__card {
-  border: var(--border-default);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-md);
   padding: var(--space-5);
   display: flex;
@@ -43,8 +47,8 @@
 }
 
 .modality__card:hover {
-  border-color: rgba(29, 122, 120, 0.4);
-  box-shadow: var(--shadow-card);
+  border-color: rgba(111, 192, 239, 0.6);
+  box-shadow: var(--shadow-canvas);
 }
 
 .modality__card-icon {
