@@ -9,7 +9,7 @@ SAVA Clinical Reasoning Studio — Product Storytelling Website
 
 ## BUILD STATUS
 
-**COMPLETE** (pending final push + deployment verification at time of writing; status updated in-place after each step)
+**COMPLETE** — production build passed, deployed to GitHub Pages via GitHub Actions, public URL verified.
 
 ---
 
@@ -128,9 +128,9 @@ Verified at 375 / 430 / 768 / 1024 / 1280 / 1440 px (via Playwright layout check
 - Workflow: `.github/workflows/deploy.yml` (GitHub Actions → GitHub Pages)
 - Trigger: push to `main`
 - Branch: `main`
-- Commit SHA: *to be recorded after push*
-- Deployment state: *to be recorded after workflow run*
-- Pages source: GitHub Actions (one-time setting in repo Settings → Pages; documented in README)
+- Commit SHA: `37240285ea006eceaed05f15ce7ff06619276423`
+- Deployment state: **success** (GitHub Pages deployment environment, status `success` at 2026-08-19 14:55:21 UTC)
+- Pages source: GitHub Actions (`build_type: workflow` confirmed via API) — no manual repo-setting change required
 
 ## PUBLIC URL
 
@@ -138,7 +138,12 @@ https://kavie-cmyk.github.io/Mo-ta-sp-DHY/
 
 ## PUBLIC URL VERIFICATION
 
-*Pending — to be verified after deployment completes.*
+**YES** — verified in browser (2026-08-19):
+- HTTP 200; title/H1 correct.
+- JS (`/Mo-ta-sp-DHY/assets/index-*.js`) and CSS (`/Mo-ta-sp-DHY/assets/index-*.css`) both resolve 200.
+- All 12 sections render; no horizontal overflow; no console errors.
+- Anchor navigation works: nav click to `#s05` lands at top offset 84px; direct deep-link load `#s12` lands correctly.
+- No broken `/assets/...` paths; Vite `base: /Mo-ta-sp-DHY/` correct.
 
 ---
 
@@ -151,8 +156,4 @@ https://kavie-cmyk.github.io/Mo-ta-sp-DHY/
 
 ## FINAL HANDOFF
 
-Website built, QA'd locally, workflow configured. Pushed to `main` and deployed via GitHub Actions; public URL verified. Continuity record committed.
-
----
-
-_Next step: independent MEP-WEB-P4 public-site QA._
+Website built, QA'd locally, pushed to `main` (commit `3724028`), deployed via GitHub Actions, public URL verified. Continuity record committed. Ready for independent MEP-WEB-P4 public-site QA.
