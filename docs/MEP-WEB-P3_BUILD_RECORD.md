@@ -44,6 +44,14 @@ Extracted text mirrors are kept locally at `docs_src/` (git-ignored) for referen
 - Typography: Inter-first Vietnamese-safe stack with system fallback; fluid clamp sizing
 - Radius: 8 / 14 / 20; border 1px #D9DEDE; light card shadows
 
+### v2 redesign — SAVA Profile Deck visual language (commit c5662b5)
+
+Rebranded to match the official **SAVA Hồ sơ năng lực (Profile deck)** design reference:
+- **Palette:** deep navy `#000050`/`#001070` (cover & section breaks), blue accent `#0070D0`/`#20A0E0`, light blue-grey canvas `#F4F6FB`, indigo text accent `#3B3FA0`.
+- **Brand logo:** extracted the SAVA lockup (blue icon block + wordmark) from the deck into `public/sava-logo-white.png` (for navy surfaces) and `public/sava-logo-dark.png` (blue icon + dark text for light surfaces); used in nav, hero and footer.
+- **Deck rhythm:** Hero rendered as navy cover slide; S07 (Modality) and S10 (Feedback loop) as navy section-break slides; white cards on navy; blue accents throughout.
+- Contrast verified on new palette (navy/white 17.8:1, accent-on-navy 9.4:1, primary 16.4:1, secondary 4.95:1, accent-on-white 4.97:1).
+
 ---
 
 ## SECTION IMPLEMENTATION
@@ -153,6 +161,7 @@ https://kavie-cmyk.github.io/Mo-ta-sp-DHY/
 - Hero `#1D7A78` accent on warm `#F6F5F1` is 4.69:1 — used only for short uppercase eyebrow labels (still ≥4.5 for normal text; large text exempt). Kept as spec color.
 - No external medical assets; placeholders are abstract schematics by design (P2B asset policy).
 - Fonts: Inter via system fallback stack (no remote font dependency → no FOUT/blocking).
+- Design-v2 uses the SAVA Profile Deck brand palette/logo; UI mockups remain illustrative placeholders (not production software).
 
 ## FINAL HANDOFF
 
