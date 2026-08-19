@@ -16,31 +16,51 @@
   align-items: start;
 }
 
+.story__steps-wrap {
+  min-width: 0;
+}
+
 .story__steps {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: var(--space-3);
 }
 
 .story__step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Each step is a full clickable button */
+.story__step-btn {
+  width: 100%;
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: var(--space-4);
-  padding: var(--space-4) 0;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  transition: opacity 0.3s ease;
+  padding: var(--space-4);
+  text-align: left;
+  background: var(--surface);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--hover-duration) ease,
+    box-shadow var(--hover-duration) ease,
+    transform var(--hover-duration) ease;
 }
 
-.story__step:last-child {
-  border-bottom: none;
+.story__step-btn:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-card);
 }
 
-.story__step:not(.story__step--active) {
-  opacity: 0.55;
+.story__step-btn--active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: var(--shadow-card);
 }
 
 .story__step-marker {
@@ -58,30 +78,33 @@
   margin-top: 2px;
 }
 
-.story__step--active .story__step-marker {
+.story__step-btn--active .story__step-marker {
   border-color: var(--accent);
-  background: var(--accent-soft);
+  background: var(--surface);
   color: var(--accent);
 }
 
+.story__step-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
 .story__step-title {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-primary);
 }
 
-.story__step-text {
-  margin-top: 4px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--text-secondary);
+.story__step-btn--active .story__step-title {
+  color: var(--accent);
 }
 
-.story__step-mocklabel {
-  margin-top: var(--space-2);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent);
+.story__step-text {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-secondary);
 }
 
 /* Mobile mock hidden on desktop */
@@ -101,8 +124,72 @@
   gap: var(--space-3);
 }
 
+.story__panel-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: 0 4px;
+}
+
+.story__panel-step {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.story__panel-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
 .story__mock-body {
   padding: var(--space-4);
+}
+
+.story__panel-nav {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.story__nav-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--hover-duration) ease,
+    background var(--hover-duration) ease;
+}
+
+.story__nav-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.story__nav-btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.story__nav-btn--primary:hover:not(:disabled) {
+  background: var(--dark-2);
+}
+
+.story__nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .story__panel-caption {
@@ -111,7 +198,7 @@
   line-height: 1.55;
 }
 
-/* ---- Mobile: sticky OFF, stacked cards with inline mocks ---- */
+/* ---- Mobile: sticky OFF, mock shows inline under the selected step ---- */
 @media (max-width: 1023px) {
   .story {
     grid-template-columns: 1fr;
@@ -123,7 +210,6 @@
 
   .story__mobile-mock {
     display: block;
-    grid-column: 1 / -1;
-    margin-top: var(--space-3);
+    margin-top: var(--space-2);
   }
 }

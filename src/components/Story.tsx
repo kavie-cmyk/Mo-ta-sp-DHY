@@ -13,7 +13,8 @@ import {
   ReasoningMock,
   FeedbackMock,
 } from './mocks/MockFragments'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useState } from 'react'
 import './Story.css'
 
 function renderMock(step: StoryStep) {
@@ -40,35 +41,18 @@ function renderMock(step: StoryStep) {
 }
 
 /**
- * V04 — Acute Dyspnea Story Stepper.
- * Desktop: 2-col, right sticky product mock panel, active step highlighted.
- * Mobile: non-sticky stacked cards, each with its own mock fragment.
+ * V04 — Acute Dyspnea Story Stepper (click-driven).
+ * Desktop: click a step (or use prev/next) → its mock shows in the sticky panel.
+ * Mobile: click a step → its mock shows inline below the list; prev/next also available.
+ * All 8 step narratives are always visible in the DOM (no-JS baseline intact).
  */
 export function Story() {
   const [active, setActive] = useState(0)
-  const stepRefs = useRef<(HTMLLIElement | null)[]>([])
+  const total = dyspneaSteps.length
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            const idx = Number((e.target as HTMLElement).dataset.index)
-            if (!Number.isNaN(idx)) setActive(idx)
-          }
-        }
-      },
-      { rootMargin: '-45% 0px -45% 0px' }
-    )
-    stepRefs.current.forEach((el) => {
-      if (el) observer.observe(el)
-    })
-    return () => observer.disconnect()
-  }, [])
-
-  const setRef = useCallback((el: HTMLLIElement | null, i: number) => {
-    stepRefs.current[i] = el
-  }, [])
+  const select = (i: number) => {
+    setActive(Math.max(0, Math.min(total - 1, i)))
+  }
 
   return (
     <SectionShell id="s04" labelledBy="s04-title">
@@ -95,40 +79,52 @@ export function Story() {
       </div>
 
       <div className="story">
-        {/* Narrative steps (left) */}
-        <ol className="story__steps">
-          {dyspneaSteps.map((step, i) => {
-            const isActive = i === active
-            return (
-              <li
-                key={step.step}
-                ref={(el) => setRef(el, i)}
-                data-index={i}
-                className={`story__step ${isActive ? 'story__step--active' : ''}`}
-              >
-                <div className="story__step-marker" aria-hidden="true">
-                  {step.step}
-                </div>
-                <div className="story__step-copy">
-                  <h3 className="story__step-title">{step.label}</h3>
-                  <p className="story__step-text">{step.narrative}</p>
-                  <p className="story__step-mocklabel">{step.mock.title}</p>
-                </div>
+        {/* Narrative steps (left) — each is a clickable button */}
+        <div className="story__steps-wrap">
+          <ol className="story__steps">
+            {dyspneaSteps.map((step, i) => {
+              const isActive = i === active
+              return (
+                <li key={step.step} className="story__step">
+                  <button
+                    type="button"
+                    className={`story__step-btn ${isActive ? 'story__step-btn--active' : ''}`}
+                    aria-expanded={isActive}
+                    aria-current={isActive ? 'true' : undefined}
+                    onClick={() => select(i)}
+                  >
+                    <span className="story__step-marker" aria-hidden="true">
+                      {step.step}
+                    </span>
+                    <span className="story__step-copy">
+                      <span className="story__step-title">{step.label}</span>
+                      <span className="story__step-text">{step.narrative}</span>
+                    </span>
+                  </button>
 
-                {/* Mobile: inline mock fragment (non-sticky) */}
-                <div className="story__mobile-mock" aria-hidden={!isActive}>
-                  <ProductMockFrame label={step.mock.title} active={isActive}>
-                    <div className="story__mock-body">{renderMock(step)}</div>
-                  </ProductMockFrame>
-                </div>
-              </li>
-            )
-          })}
-        </ol>
+                  {/* Mobile: inline mock for the active step (non-sticky) */}
+                  <div className="story__mobile-mock" aria-hidden={!isActive}>
+                    {isActive ? (
+                      <ProductMockFrame label={step.mock.title} badge="Ví dụ minh họa" active>
+                        <div className="story__mock-body">{renderMock(step)}</div>
+                      </ProductMockFrame>
+                    ) : null}
+                  </div>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
 
-        {/* Sticky product mock panel (desktop only) */}
+        {/* Sticky product mock panel (desktop) */}
         <div className="story__panel" aria-live="polite">
           <div className="story__panel-inner">
+            <div className="story__panel-head">
+              <span className="story__panel-step">
+                Bước {dyspneaSteps[active].step} / {String(total).padStart(2, '0')}
+              </span>
+              <span className="story__panel-label">{dyspneaSteps[active].label}</span>
+            </div>
             <ProductMockFrame
               label={dyspneaSteps[active].mock.title}
               badge="Ví dụ minh họa"
@@ -136,9 +132,29 @@ export function Story() {
             >
               <div className="story__mock-body">{renderMock(dyspneaSteps[active])}</div>
             </ProductMockFrame>
+            <div className="story__panel-nav">
+              <button
+                type="button"
+                className="story__nav-btn"
+                onClick={() => select(active - 1)}
+                disabled={active === 0}
+              >
+                <ChevronLeft aria-hidden="true" size={18} />
+                Trước
+              </button>
+              <button
+                type="button"
+                className="story__nav-btn story__nav-btn--primary"
+                onClick={() => select(active + 1)}
+                disabled={active === total - 1}
+              >
+                Tiếp
+                <ChevronRight aria-hidden="true" size={18} />
+              </button>
+            </div>
             <p className="story__panel-caption">
-              Các màn hình trong câu chuyện là mockup minh họa trải nghiệm, không phải ảnh chụp
-              một sản phẩm đã hoàn thiện.
+              Các màn hình trong câu chuyện là mockup minh họa trải nghiệm, không phải ảnh chụp một
+              sản phẩm đã hoàn thiện.
             </p>
           </div>
         </div>
