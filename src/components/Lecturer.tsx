@@ -5,6 +5,7 @@ import { ProcessStepper } from './primitives/ProcessStepper'
 import { ProductMockFrame } from './primitives/ProductMockFrame'
 import { StatusChip } from './primitives/StatusChip'
 import { CalloutNote } from './primitives/CalloutNote'
+import { Governance } from './Governance'
 import './Lecturer.css'
 
 export function Lecturer() {
@@ -14,18 +15,14 @@ export function Lecturer() {
         headingId="s05-title"
         eyebrow="Từ mục tiêu học tập đến một ca có thể đưa vào lớp"
         headline="Giảng viên giữ quyền kiểm soát nội dung và cách dạy"
-        subheadline="AI có thể hỗ trợ soạn bản nháp, nhưng nội dung y khoa chỉ được đưa vào sử dụng sau khi con người kiểm tra và phê duyệt."
+        subheadline="AI hỗ trợ soạn bản nháp; nội dung y khoa chỉ được dùng sau khi con người kiểm tra và phê duyệt."
       >
         <div className="lecturer__body">
           <p>
-            Một giảng viên có thể bắt đầu bằng câu hỏi: “Sau bài này, sinh viên cần biết lập luận
-            điều gì?” Từ đó, giảng viên xác định tình huống bệnh nhân, dữ kiện sẽ xuất hiện, điểm
-            cần sinh viên giải thích và cách phản hồi phù hợp.
-          </p>
-          <p>
-            Khi ca được duyệt và giao cho lớp, giảng viên có thể xem những điểm sinh viên thường
-            bỏ sót hoặc cần nhiều hỗ trợ. Thông tin này giúp quyết định nên giảng lại nội dung nào
-            hoặc điều chỉnh ca ra sao.
+            Giảng viên bắt đầu từ mục tiêu: “Sau bài này, sinh viên cần biết lập luận điều gì?” —
+            rồi xác định tình huống bệnh nhân, dữ kiện, điểm cần giải thích và cách phản hồi. Khi
+            ca được giao cho lớp, giảng viên có thể xem những điểm sinh viên thường bỏ sót hoặc
+            cần hỗ trợ để điều chỉnh nội dung.
           </p>
         </div>
       </SectionHeading>
@@ -75,10 +72,8 @@ export function Lecturer() {
         </CalloutNote>
       </div>
 
-      <p className="lecturer__caption">
-        AI rút ngắn phần soạn nháp; quyền quyết định nội dung được dùng trong giảng dạy vẫn thuộc
-        quy trình học thuật của con người.
-      </p>
+      {/* Content governance + lecturer insights */}
+      <Governance />
     </SectionShell>
   )
 }

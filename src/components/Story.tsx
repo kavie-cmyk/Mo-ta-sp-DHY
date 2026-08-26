@@ -1,5 +1,3 @@
-import { SectionShell } from './primitives/SectionShell'
-import { SectionHeading } from './primitives/SectionHeading'
 import { ProductMockFrame } from './primitives/ProductMockFrame'
 import { DisclaimerNote } from './primitives/DisclaimerNote'
 import { dyspneaSteps, type StoryStep } from '../content/dyspnea'
@@ -41,10 +39,9 @@ function renderMock(step: StoryStep) {
 }
 
 /**
- * V04 — Acute Dyspnea Story Stepper (click-driven).
+ * Story — Acute Dyspnea example (click-driven), sub-block of S04.
  * Desktop: click a step (or use prev/next) → its mock shows in the sticky panel.
- * Mobile: click a step → its mock shows inline below the list; prev/next also available.
- * All 8 step narratives are always visible in the DOM (no-JS baseline intact).
+ * Mobile: click a step → its mock shows inline below the list.
  */
 export function Story() {
   const [active, setActive] = useState(0)
@@ -55,21 +52,14 @@ export function Story() {
   }
 
   return (
-    <SectionShell id="s04" labelledBy="s04-title">
-      <SectionHeading
-        headingId="s04-title"
-        eyebrow="Nhìn sản phẩm vận hành qua một tình huống"
-        headline="Từ câu hỏi đầu tiên đến lần luyện lại"
-        subheadline="Một câu chuyện ngắn cho thấy ca bệnh, AI, dữ kiện, 3D và phản hồi phối hợp với nhau như thế nào trong trải nghiệm của sinh viên."
-      >
-        <div className="story__intro">
-          <p>
-            Hãy hình dung một sinh viên mở ca về một người bệnh đến khám vì khó thở. Em chỉ thấy
-            thông tin ban đầu và mục tiêu học tập. Mọi dữ kiện tiếp theo phải được khám phá theo
-            hành động của chính người học.
-          </p>
-        </div>
-      </SectionHeading>
+    <div className="story__block">
+      <div className="story__heading">
+        <h3 className="story__subhead">Nhìn sản phẩm vận hành qua một tình huống</h3>
+        <p className="story__intro">
+          Hãy hình dung một sinh viên mở ca về một người bệnh đến khám vì khó thở. Mọi dữ kiện tiếp
+          theo được khám phá theo hành động của chính người học — bấm vào từng bước để xem.
+        </p>
+      </div>
 
       <div className="story__note">
         <DisclaimerNote>
@@ -159,6 +149,6 @@ export function Story() {
           </div>
         </div>
       </div>
-    </SectionShell>
+    </div>
   )
 }

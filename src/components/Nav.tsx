@@ -4,15 +4,15 @@ import './Nav.css'
 
 const NAV_ITEMS = [
   { label: 'Tổng quan', href: '#s01' },
-  { label: 'Sinh viên', href: '#s03' },
+  { label: 'Vấn đề', href: '#s02' },
+  { label: 'Nền tảng', href: '#s03' },
+  { label: 'Sinh viên', href: '#s04' },
   { label: 'Giảng viên', href: '#s05' },
   { label: 'AI & 3D', href: '#s06' },
-  { label: 'Cách hoạt động', href: '#s09' },
-  { label: 'Khác biệt', href: '#s08' },
-  { label: 'HMU', href: '#s12' },
+  { label: 'HMU', href: '#s07' },
 ]
 
-const SECTION_IDS = ['s01', 's03', 's05', 's06', 's09', 's08', 's12']
+const SECTION_IDS = ['s01', 's02', 's03', 's04', 's05', 's06', 's07']
 
 export function Nav() {
   const [open, setOpen] = useState(false)

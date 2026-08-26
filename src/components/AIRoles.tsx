@@ -3,24 +3,25 @@ import { SectionHeading } from './primitives/SectionHeading'
 import { CalloutNote } from './primitives/CalloutNote'
 import { aiRoles } from '../content/copy'
 import { MessageCircle, Lightbulb, PenSquare, ShieldCheck } from 'lucide-react'
+import { Modality } from './Modality'
+import { Comparison } from './Comparison'
 import './AIRoles.css'
 
 const icons = [MessageCircle, Lightbulb, PenSquare]
 
 export function AIRoles() {
   return (
-    <SectionShell id="s06" tone="muted" labelledBy="s06-title">
+    <SectionShell id="s06" tone="default" labelledBy="s06-title">
       <SectionHeading
         headingId="s06-title"
-        eyebrow="Ba vai trò dễ hiểu"
+        eyebrow="AI, hình ảnh y khoa và 3D"
         headline="AI hỗ trợ quá trình học, không làm bài thay sinh viên"
         subheadline="AI xuất hiện với vai trò rõ ràng: bệnh nhân mô phỏng, trợ giảng sau nỗ lực của người học và công cụ hỗ trợ giảng viên."
       >
         <div className="airoles__body">
           <p>
-            AI không được đặt ở vị trí đưa lời giải ngay khi sinh viên chưa tự thử. Ở những điểm
-            cần tư duy độc lập, sinh viên phải hỏi, chọn dữ kiện, nêu giả thuyết hoặc giải thích
-            trước; sau đó hệ thống mới tăng mức hỗ trợ khi phù hợp.
+            Sinh viên nghĩ trước — hỏi, chọn dữ kiện, nêu giả thuyết và giải thích. Sau đó AI mới
+            tăng mức hỗ trợ khi phù hợp.
           </p>
         </div>
       </SectionHeading>
@@ -55,17 +56,15 @@ export function AIRoles() {
       </div>
 
       <div className="airoles__callout">
-        <CalloutNote variant="warning">Sinh viên nghĩ trước. AI hỗ trợ sau.</CalloutNote>
         <CalloutNote variant="info">
           AI hỗ trợ quá trình học; không thay sinh viên đưa ra lập luận và không tự phê duyệt nội
           dung y khoa.
         </CalloutNote>
       </div>
 
-      <p className="airoles__caption">
-        Tách rõ ba vai trò giúp người học biết mình đang nói chuyện với bệnh nhân, nhận trợ giúp
-        học tập hay sử dụng công cụ dành cho giảng viên.
-      </p>
+      {/* 3D / imaging / VR-XR + comparison (sub-blocks of the AI & 3D block) */}
+      <Modality />
+      <Comparison />
     </SectionShell>
   )
 }

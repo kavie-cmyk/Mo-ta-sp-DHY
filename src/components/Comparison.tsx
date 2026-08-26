@@ -1,25 +1,18 @@
-import { SectionShell } from './primitives/SectionShell'
-import { SectionHeading } from './primitives/SectionHeading'
 import { comparison } from '../content/copy'
 import './Comparison.css'
 
+/**
+ * Sub-block within S06 AI & 3D — comparison with familiar tools.
+ */
 export function Comparison() {
   return (
-    <SectionShell id="s08" tone="muted" labelledBy="s08-title">
-      <SectionHeading
-        headingId="s08-title"
-        eyebrow="Khác ở cách tổ chức trải nghiệm học"
-        headline="Không thay thế các công cụ quen thuộc — bổ sung phần lập luận trong ca bệnh"
-        subheadline="Nhiều công cụ đã làm rất tốt từng phần riêng lẻ. Clinical Reasoning Studio kết nối các phần đó quanh quá trình sinh viên tìm dữ kiện, lập luận, nhận phản hồi và luyện lại."
-      >
-        <div className="comparison__body">
-          <p>
-            Điểm khác biệt không nằm ở việc SAVA “có AI” hoặc “có 3D”. Giá trị được đề xuất nằm ở
-            việc những thành phần này cùng phục vụ một ca bệnh tương tác có mục tiêu học, dữ kiện,
-            lập luận và phản hồi rõ ràng.
-          </p>
-        </div>
-      </SectionHeading>
+    <div className="comparison__wrap">
+      <h3 className="comparison__subhead">Khác gì các công cụ quen thuộc?</h3>
+      <p className="comparison__intro">
+        Chatbot, atlas 3D, LMS, bệnh nhân ảo và ngân hàng câu hỏi làm tốt từng phần riêng lẻ.
+        Studio kết nối các phần đó quanh một ca bệnh có mục tiêu, dữ kiện, lập luận và phản hồi rõ
+        ràng.
+      </p>
 
       {/* Desktop / tablet: semantic table */}
       <div className="comparison__table-wrap">
@@ -66,11 +59,6 @@ export function Comparison() {
           </article>
         ))}
       </div>
-
-      <p className="comparison__caption">
-        Bảng so sánh mô tả trọng tâm sử dụng phổ biến của từng loại công cụ, không nhằm đánh giá
-        một sản phẩm hoặc nhà cung cấp cụ thể.
-      </p>
-    </SectionShell>
+    </div>
   )
 }

@@ -35,14 +35,9 @@ export function Problem() {
       >
         <div className="problem__body">
           <p>
-            Bài giảng, sách điện tử, video, ngân hàng câu hỏi, atlas 3D và LMS đều có vai trò quan
-            trọng trong đào tạo. Tuy nhiên, một câu trả lời đúng chưa cho biết sinh viên đã đi đến
-            kết luận bằng cách nào.
-          </p>
-          <p>
-            SAVA Clinical Reasoning Studio bổ sung một lớp luyện tập nơi quá trình đó trở nên nhìn
-            thấy được: người học phải thu thập dữ kiện, cập nhật chẩn đoán phân biệt, giải thích
-            lập luận và thử lại sau phản hồi.
+            Bài giảng, sách điện tử, video, ngân hàng câu hỏi và LMS giúp truyền đạt kiến thức tốt.
+            Nhưng một câu trả lời đúng chưa cho biết sinh viên đã đi đến kết luận bằng cách nào.
+            Studio bổ sung một lớp luyện tập nơi quá trình đó trở nên nhìn thấy được.
           </p>
         </div>
       </SectionHeading>
@@ -61,8 +56,8 @@ export function Problem() {
       </div>
 
       <p className="problem__caption">
-        Sản phẩm không thay thế các hình thức học hiện có; nó bổ sung phần luyện sử dụng kiến thức
-        trong một tình huống lâm sàng có diễn tiến.
+        Studio bổ sung lớp luyện sử dụng kiến thức trong một tình huống lâm sàng có diễn tiến —
+        song song với các hình thức học hiện có.
       </p>
     </SectionShell>
   )

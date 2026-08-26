@@ -20,7 +20,6 @@ export function Footer() {
         </div>
         <div className="footer__closing">
           <p>{site.closing.line1}</p>
-          <p>{site.closing.line2}</p>
         </div>
         <p className="footer__micro">{site.footerMicrocopy}</p>
       </div>

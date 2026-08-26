@@ -1,0 +1,118 @@
+.next {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.next__eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6fc0ef;
+  margin-bottom: var(--space-4);
+}
+
+.next__title {
+  font-size: clamp(26px, 3.6vw, 40px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-inverse);
+}
+
+.next__sub {
+  margin: var(--space-4) auto 0;
+  max-width: 62ch;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(247, 248, 255, 0.85);
+}
+
+.next__flow {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.next__step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.next__num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0, 112, 208, 0.35);
+  color: #8fd0f5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.next__label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-inverse);
+}
+
+.next__arrow-h {
+  color: #8fd0f5;
+}
+
+.next__arrow-v {
+  display: none;
+  color: #8fd0f5;
+}
+
+.next__cta {
+  margin-top: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.next__cta-btn {
+  display: inline-block;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background var(--hover-duration) ease, transform var(--hover-duration) ease;
+}
+
+.next__cta-btn:hover {
+  background: #005bb0;
+}
+
+.next__cta-note {
+  font-size: 12.5px;
+  color: rgba(247, 248, 255, 0.65);
+}
+
+@media (max-width: 767px) {
+  .next__flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .next__arrow-h {
+    display: none;
+  }
+
+  .next__arrow-v {
+    display: inline-block;
+    margin-left: 30px;
+  }
+}

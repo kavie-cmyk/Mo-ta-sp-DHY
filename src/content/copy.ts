@@ -12,8 +12,15 @@ export const site = {
     line1: 'Đề xuất này là cơ sở để cùng nhà trường trao đổi về môn học, nhóm sinh viên và tình huống đào tạo phù hợp nhất.',
     line2: 'Bước trao đổi tiếp theo nên bắt đầu từ một câu hỏi cụ thể: sinh viên cần được luyện loại tư duy nào, trong môn học và bối cảnh nào?',
   },
+  nextStep: {
+    eyebrow: 'Bước tiếp theo',
+    headline: 'Từ mô tả sản phẩm đến một ca học cụ thể',
+    sub: 'Chúng tôi sẵn sàng cùng Nhà trường chọn một môn học, xác định mục tiêu sinh viên cần luyện và đồng xây dựng một ca mẫu để dùng thử.',
+    cta: 'Trao đổi về ca học đầu tiên',
+    note: 'Vui lòng liên hệ qua đầu mối SAVA để sắp xếp buổi trao đổi với Nhà trường.',
+  },
   footerMicrocopy:
-    'Mô tả sản phẩm — nội dung minh họa cần được xác nhận theo bối cảnh triển khai thực tế.',
+    'SAVA Clinical Reasoning Studio — mô tả sản phẩm để trao đổi triển khai cùng Nhà trường.',
 }
 
 export interface SectionCopy {
@@ -368,14 +375,119 @@ export const hmuKnown = [
 ]
 
 export const hmuValidate = [
-  'Môn học, chủ đề và mục tiêu học tập ưu tiên.',
-  'Nhóm sinh viên và cách sản phẩm sẽ được sử dụng.',
-  'Khả năng tích hợp với LMS hiện tại.',
-  'Yêu cầu đăng nhập, thiết bị và khả năng truy cập.',
-  'Quy trình biên soạn, kiểm duyệt và phê duyệt nội dung.',
-  'Quyền sử dụng ca bệnh, hình ảnh và tài liệu.',
-  'Yêu cầu bảo mật, lưu trữ và xử lý dữ liệu.',
-  'Các chỉ số nhà trường cho là phù hợp để đánh giá hoạt động học.',
+  'Môn học / chủ đề ưu tiên',
+  'Nhóm sinh viên và mục tiêu học tập',
+  'Quy trình duyệt nội dung',
+  'Hạ tầng đăng nhập / LMS',
+  'Quyền sử dụng hình ảnh và ca bệnh',
+  'Bảo mật và lưu trữ dữ liệu',
+  'Tiêu chí đánh giá hoạt động học',
+]
+
+/* ---------- MEP-WEB-P4: Product architecture (4 blocks) ---------- */
+
+export interface PlatformBlock {
+  index: string
+  title: string
+  icon: string
+  items: string[]
+  note: string
+}
+
+export const platformBlocks: PlatformBlock[] = [
+  {
+    index: '01',
+    title: 'Không gian học của sinh viên',
+    icon: 'student',
+    items: [
+      'Ca bệnh tương tác',
+      'Bệnh nhân mô phỏng',
+      'Thu thập dữ kiện',
+      'Hình ảnh y khoa / 3D',
+      'Chẩn đoán phân biệt',
+      'Giải thích lập luận',
+      'Phản hồi',
+      'Học bổ trợ',
+      'Làm lại',
+    ],
+    note: 'Nơi sinh viên hỏi bệnh, lập luận và luyện lại qua từng ca.',
+  },
+  {
+    index: '02',
+    title: 'Không gian của giảng viên',
+    icon: 'faculty',
+    items: [
+      'Xác định mục tiêu học',
+      'Biên soạn ca',
+      'AI hỗ trợ bản nháp',
+      'Kiểm duyệt chuyên môn',
+      'Phê duyệt học thuật',
+      'Giao ca cho lớp',
+      'Theo dõi điểm sinh viên gặp khó',
+      'Điều chỉnh nội dung',
+    ],
+    note: 'Nơi giảng viên xây dựng, kiểm soát và cải thiện ca học.',
+  },
+  {
+    index: '03',
+    title: 'Kho nội dung học tập',
+    icon: 'content',
+    items: [
+      'Ca bệnh',
+      'Hình ảnh y khoa',
+      'Mô hình 3D',
+      'Tài liệu tham chiếu',
+      'Tiêu chí phản hồi',
+      'Nội dung học bổ trợ',
+      'Phiên bản nội dung',
+    ],
+    note: 'Nội dung y khoa được biên soạn, duyệt và quản lý phiên bản tập trung.',
+  },
+  {
+    index: '04',
+    title: 'Quản trị & tích hợp',
+    icon: 'admin',
+    items: [
+      'Người dùng',
+      'Lớp học',
+      'Phân quyền',
+      'Tích hợp LMS',
+      'Trạng thái hoàn thành',
+      'Kết quả tóm tắt',
+      'Quản trị nội dung',
+    ],
+    note: 'Nền tảng vận hành cho lớp học và kết nối với hệ thống của trường.',
+  },
+]
+
+/* ---------- MEP-WEB-P4: HMU deployment scenarios ---------- */
+
+export const lmsScenarioA = [
+  { title: 'LMS hiện hữu' },
+  { title: 'Khóa học / Lớp / Bài tập' },
+  { title: 'SAVA Clinical Reasoning Studio' },
+  { title: 'Ca bệnh tương tác' },
+  { title: 'Kết quả / Trạng thái hoàn thành' },
+]
+
+export const standaloneFeatures = [
+  'Tài khoản',
+  'Lớp học',
+  'Giao ca',
+  'Theo dõi hoạt động',
+  'Nội dung',
+  'Kết quả tóm tắt',
+]
+
+/* ---------- MEP-WEB-P4: Next step CTA ---------- */
+
+export const nextStepFlow = [
+  { title: 'Chọn môn / chủ đề' },
+  { title: 'Xác định mục tiêu sinh viên cần luyện' },
+  { title: 'Đồng xây dựng một ca mẫu' },
+  { title: 'Giảng viên / chuyên gia kiểm duyệt' },
+  { title: 'Sinh viên dùng thử' },
+  { title: 'Đánh giá và điều chỉnh' },
 ]
 
 export const accordions = [

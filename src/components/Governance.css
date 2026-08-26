@@ -1,17 +1,27 @@
-.governance__body {
+.governance__wrap {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.governance__subhead {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.governance__desc {
+  font-size: 15px;
+  color: var(--text-secondary);
   max-width: var(--max-w-narrative);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  font-size: 16px;
-  line-height: 1.65;
+  margin-bottom: var(--space-5);
 }
 
 .governance__split {
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: var(--space-5);
-  margin-top: var(--space-6);
   align-items: start;
 }
 

@@ -1,7 +1,25 @@
+.story__block {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.story__heading {
+  margin-bottom: var(--space-4);
+}
+
+.story__subhead {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
 .story__intro {
   max-width: var(--max-w-narrative);
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 .story__note {

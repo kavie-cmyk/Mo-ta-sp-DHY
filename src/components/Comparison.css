@@ -1,11 +1,24 @@
-.comparison__body {
+.comparison__wrap {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.comparison__subhead {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.comparison__intro {
+  font-size: 15px;
+  color: var(--text-secondary);
   max-width: var(--max-w-narrative);
-  font-size: 16px;
-  line-height: 1.65;
+  margin-bottom: var(--space-5);
 }
 
 .comparison__table-wrap {
-  margin-top: var(--space-6);
   background: var(--surface);
   border: var(--border-default);
   border-radius: var(--radius-lg);
